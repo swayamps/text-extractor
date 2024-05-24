@@ -15,9 +15,15 @@ def extract_text(image: Image.Image) -> str:
     try:
         text = pytesseract.image_to_string(image)
         return text
-    except Exception as e:
+    except pytesseract.TesseractError as e:
+        # Log the error for debugging purposes
         st.error(f"An error occurred while extracting text: {e}")
-        return ""
+        return "Text extraction failed. Please try again."
+    except Exception as e:
+        # Handle other exceptions gracefully
+        st.error("An unexpected error occurred while extracting text.")
+        return "Text extraction failed. Please try again."
+
 
 # Segment visual elements using OpenCV
 def segment_visual_elements(image_path: str) -> Tuple[np.ndarray, List[np.ndarray]]:
