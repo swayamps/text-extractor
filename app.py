@@ -21,7 +21,7 @@ def extract_text(image: Image.Image) -> str:
         return "Text extraction failed. Please try again."
     except Exception as e:
         # Handle other exceptions gracefully
-        st.error("An unexpected error occurred while extracting text.")
+        st.error(f"An unexpected error occurred while extracting text: {e}")
         return "Text extraction failed. Please try again."
 
 
