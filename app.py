@@ -1,5 +1,3 @@
-# File path: streamlit_app_tesseract.py
-
 import os
 import cv2
 import io
