@@ -1,5 +1,5 @@
 import os
-import cv2
+import  cv2
 # import io
 import numpy as np
 import streamlit as st
@@ -8,7 +8,7 @@ import pytesseract
 from typing import List, Tuple
 
 # Set the path to the Tesseract executable if it's not in your PATH
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR'
 
 # Extract text from image using Tesseract OCR
 def extract_text(image: Image.Image) -> str:
